@@ -58,6 +58,10 @@ namespace Microsoft.MixedReality.Toolkit.Editor
         {
             base.OnEnable();
 
+#if UNITY_2019
+            xrPipelineUtility.Enable();
+#endif // UNITY_2019
+
             providerConfigurations = GetDataProviderConfigurationList();
 
             if (providerFoldouts == null || providerFoldouts.Count != providerConfigurations.arraySize)

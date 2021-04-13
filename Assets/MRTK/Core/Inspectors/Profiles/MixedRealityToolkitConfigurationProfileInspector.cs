@@ -105,6 +105,9 @@ namespace Microsoft.MixedReality.Toolkit.Editor
             boundarySystemType = serializedObject.FindProperty("boundarySystemType");
             xrsdkBoundarySystemType = serializedObject.FindProperty("xrsdkBoundarySystemType");
             boundaryVisualizationProfile = serializedObject.FindProperty("boundaryVisualizationProfile");
+#if UNITY_2019
+            xrPipelineUtility.Enable();
+#endif // UNITY_2019
 
             // Teleport system configuration
             enableTeleportSystem = serializedObject.FindProperty("enableTeleportSystem");
