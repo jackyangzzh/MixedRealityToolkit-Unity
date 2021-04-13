@@ -1,15 +1,13 @@
 ﻿// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using UnityEditor;
-
 #if UNITY_2019_3_OR_NEWER
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 #endif // UNITY_2019_3_OR_NEWER
 
-namespace Microsoft.MixedReality.Toolkit.Utilities.Editor
+namespace Microsoft.MixedReality.Toolkit.Utilities
 {
     /// <summary>
     /// Utilities that abstract XR settings functionality so that the MRTK need not know which
