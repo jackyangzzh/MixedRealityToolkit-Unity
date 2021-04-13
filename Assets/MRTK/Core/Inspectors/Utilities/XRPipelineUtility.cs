@@ -12,7 +12,7 @@ namespace Microsoft.MixedReality.Toolkit.Utilities.Editor
         private const string LegacyXRLabel = "Legacy XR";
         private const string XRSDKLabel = "XR SDK";
         private static readonly string[] Tabs = new string[] { LegacyXRLabel, XRSDKLabel };
-        private int tab = 0;
+        private int tab = XRSettingsUtilities.IsLegacyXRActive ? 0 : 1;
 #endif // UNITY_2019
 
         public SupportedUnityXRPipelines SelectedPipeline { get; private set; } =
@@ -23,11 +23,6 @@ namespace Microsoft.MixedReality.Toolkit.Utilities.Editor
 #endif // UNITY_2019_3_OR_NEWER
 
 #if UNITY_2019
-        public void Enable()
-        {
-            tab = XRSettingsUtilities.IsLegacyXRActive ? 0 : 1;
-        }
-
         public void RenderXRPipelineTabs()
         {
             tab = GUILayout.Toolbar(tab, Tabs);
